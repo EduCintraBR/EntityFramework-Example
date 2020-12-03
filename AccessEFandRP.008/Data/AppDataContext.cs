@@ -1,11 +1,6 @@
 ﻿using AccessEFandRP._008.Domain;
 using AccessEFandRP._008.Mapping;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AccessEFandRP._008.Data
 {

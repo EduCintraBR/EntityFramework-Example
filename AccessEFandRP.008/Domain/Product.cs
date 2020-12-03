@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AccessEFandRP._008.Domain
+﻿namespace AccessEFandRP._008.Domain
 {
     public class Product
     {
