@@ -12,10 +12,10 @@ namespace AccessEFandRP._008
             var cs = new Customer
             {
                 Id = Guid.NewGuid(),
-                Name = "Eduardo Cintra",
+                Name = "Eduardo Elias Barbosa Cintra",
                 Birthday = DateTime.Parse("15/11/1996"),
                 isActive = true,
-                Salary = 1803
+                Salary = 2800
             };
 
             var prod1 = new Product
@@ -27,10 +27,26 @@ namespace AccessEFandRP._008
 
             using (AppDataContext db = new AppDataContext())
             {
+                // Create
                 //db.Customers.Add(cs);
                 //db.Products.Add(prod1);
                 //db.SaveChanges();
 
+                // Update
+                var customer1 = db.Customers
+                                  .Where(x => x.Name == "Eduardo E B Cintra").FirstOrDefault();
+
+                customer1.Name = "Edu Cintra";
+                customer1.Salary = 2800;
+
+                db.Entry<Customer>(customer1).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+
+                // Delete
+                //db.Customers.Remove(customer1);
+                //db.SaveChanges();
+
+                // Read
                 var customer = db.Customers.ToList();
                 var product = db.Products.ToList();
 
@@ -42,7 +58,7 @@ namespace AccessEFandRP._008
                 {
                     Console.WriteLine($"Id: {prd.Id} \n Name: {prd.Name} - Price: {prd.Price} \n");
                 }
-                
+
             }
         }
     }
