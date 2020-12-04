@@ -6,7 +6,7 @@ namespace AccessEFandRP._008.Domain
     public class Customer
     {
         //[Key()]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         //[Required]
         //[StringLength(50)]
